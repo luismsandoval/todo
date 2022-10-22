@@ -8,7 +8,7 @@ export const Lightswitch = () => {
 
   return (
     <Toggle onChange={handleClick} checked={darkMode}>
-      🌙
+      {darkMode ? "🌙" : "☀️"}
     </Toggle>
   );
 };
