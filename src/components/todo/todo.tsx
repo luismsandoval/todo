@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useForm from "../../hooks/form";
 import Form from "@cloudscape-design/components/form";
 import SpaceBetween from "@cloudscape-design/components/space-between";
@@ -7,6 +7,7 @@ import Header from "@cloudscape-design/components/header";
 
 import { v4 as uuidv4 } from "uuid";
 import { ColumnLayout, FormField, Input, RadioGroup } from "@cloudscape-design/components";
+import { DarkModeContext } from "../../context/settings/context";
 
 const ToDo = () => {
   const [defaultValues] = useState({
@@ -48,6 +49,7 @@ const ToDo = () => {
   const [inputValue, setInputValue] = useState("");
   const [nameValue, setNameValue] = useState("");
   const [difficultyValue, setDifficultyValue] = useState("");
+  const {darkMode} = useContext(DarkModeContext);
 
   return (
     <>
@@ -56,7 +58,7 @@ const ToDo = () => {
       </header>
       <form onSubmit={handleSubmit}>
         <Form
-          
+          className={darkMode ? "awsui-dark-mode" : "awsui-light-mode"}
           actions={
             <SpaceBetween direction="horizontal" size="xs">
               <Button formAction="none" variant="link">
