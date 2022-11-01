@@ -1,14 +1,13 @@
-import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import "@cloudscape-design/global-styles/index.css";
 import App from "./App";
-import { DarkModeProvider } from "./context/settings/context";
+import { SettingsProvider } from "./context/settings/context";
 
 const Main = () => {
   return (
-    <DarkModeProvider>
+    <SettingsProvider>
       <App />;
-    </DarkModeProvider>
+    </SettingsProvider>
   );
 };
 
