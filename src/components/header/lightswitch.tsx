@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { DarkModeContext } from "../../context/settings/context";
+import { SettingsContext } from "../../context/settings/context";
 import { Toggle } from "@cloudscape-design/components";
 
 export const Lightswitch = () => {
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { darkMode, toggleDarkMode } = useContext(SettingsContext);
   const handleClick = () => toggleDarkMode();
 
   return (

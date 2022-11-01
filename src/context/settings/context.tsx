@@ -1,8 +1,8 @@
 import React, { createContext, useState } from "react";
 
-const DarkModeContext = createContext();
+const SettingsContext = createContext();
 
-const DarkModeProvider = (props) => {
+const SettingsProvider = (props) => {
   const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -10,11 +10,11 @@ const DarkModeProvider = (props) => {
 
   return (
     <div>
-    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+    <SettingsContext.Provider value={{ darkMode, toggleDarkMode }}>
       {props.children}
-    </DarkModeContext.Provider>
+    </SettingsContext.Provider>
     </div>
   );
 };
 
-export { DarkModeContext, DarkModeProvider };
+export { SettingsContext, SettingsProvider };
